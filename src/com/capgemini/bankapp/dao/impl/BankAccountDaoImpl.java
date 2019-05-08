@@ -41,7 +41,7 @@ public class BankAccountDaoImpl implements BankAccountDao {
 			statement.setLong(2, accountId);
 
 			int result = statement.executeUpdate();
-			
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -136,9 +136,8 @@ public class BankAccountDaoImpl implements BankAccountDao {
 	public boolean updateBankAccountDetails(long accountId, String accountHolderName, String accountType) {
 
 		String query = "UPDATE bankaccounts SET customer_name=?,account_type=? WHERE account_id=?";
-
-		try (Connection connection = DbUtil.getConnection();
-				PreparedStatement statement = connection.prepareStatement(query)) {
+		Connection connection = DbUtil.getConnection();
+		try (PreparedStatement statement = connection.prepareStatement(query)) {
 
 			statement.setString(1, accountHolderName);
 			statement.setString(2, accountType);

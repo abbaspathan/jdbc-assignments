@@ -24,3 +24,19 @@ com.capgemini.bankapp.exception.AccountNotFoundException: BankAccount doesn't ex
 	at com.capgemini.bankapp.service.impl.BankAccountServiceImpl.fundTransfer(BankAccountServiceImpl.java:102)
 	at com.capgemini.bankapp.client.BankAccountClient.main(BankAccountClient.java:87)
 2019-03-28 18:18:54-6 - [main] ERROR com.capgemini.bankapp.client.BankAccountClient  - BankAccount doesn't exist....
+2019-04-01 17:16:30-0 - [main] ERROR com.capgemini.bankapp.util.DbUtil  - SQLException :
+com.mysql.jdbc.exceptions.jdbc4.MySQLNonTransientConnectionException: Connection.close() has already been called. Invalid operation in this state.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:406)
+	at com.mysql.jdbc.Util.getInstance(Util.java:381)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:985)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:957)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:927)
+	at com.mysql.jdbc.ConnectionImpl.getMutex(ConnectionImpl.java:3015)
+	at com.mysql.jdbc.ConnectionImpl.commit(ConnectionImpl.java:1521)
+	at com.capgemini.bankapp.util.DbUtil.commit(DbUtil.java:43)
+	at com.capgemini.bankapp.service.impl.BankAccountServiceImpl.updateBankAccountDetails(BankAccountServiceImpl.java:131)
+	at com.capgemini.bankapp.client.BankAccountClient.main(BankAccountClient.java:149)
